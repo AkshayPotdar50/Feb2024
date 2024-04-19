@@ -9,7 +9,9 @@ import java.util.stream.Collectors;
 public class HelloDevil {
     public static void main(String[] args) {
        String s1 = "akshay";
-      Map<Character, Long> count = s1.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(c->c, Collectors.counting()));
+      Map<Character, Long> count = s1.chars()
+              .mapToObj(c->(char)c)
+              .collect(Collectors.groupingBy(c->c, Collectors.counting()));
         System.out.println(count);
 
         //reverse the each word in string

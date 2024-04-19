@@ -176,11 +176,18 @@ public class Test1 {
         System.out.println("*********************************");
 
          String input4 ="hello world 123";
-         long vowelCount =input4.chars().mapToObj((ch)-> (char)ch).map(Character::toLowerCase).filter(ch->"aeiou".contains(String.valueOf(ch))).count();
+         long vowelCount =input4.chars()
+                 .mapToObj((ch)-> (char)ch)
+                 .map(Character::toLowerCase)
+                 .filter(ch->"aeiou".contains(String.valueOf(ch)))
+                 .count();
         System.out.println(vowelCount);
         System.out.println("********************************************");
 
-        long consonantCount =input4.chars().mapToObj(ch->(char)ch).map(Character::toLowerCase).filter(ch->Character.isLetter(ch) && !"aeiou".contains(String.valueOf(ch))).count();
+        long consonantCount =input4.chars()
+                .mapToObj(ch->(char)ch)
+                .map(Character::toLowerCase)
+                .filter(ch->Character.isLetter(ch) && !"aeiou".contains(String.valueOf(ch))).count();
         System.out.println(consonantCount);
         System.out.println("*****************************************");
 

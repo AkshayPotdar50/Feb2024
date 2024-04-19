@@ -19,12 +19,12 @@ public class DeadlockExample {
             }
         });
         Thread thread2 = new Thread(() -> {
-            synchronized (lock2) {
+            synchronized (lock1) {
                 System.out.println("Thread 2: Holding lock2...");
                 try { Thread.sleep(100); }
                 catch (InterruptedException ignored) {}
                 System.out.println("Thread 2: Waiting for lock1...");
-                synchronized (lock1) {
+                synchronized (lock2) {
                     System.out.println("Thread 2: Acquired lock1!");
                 }
             }
